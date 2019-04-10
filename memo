@@ -1,0 +1,14 @@
+
+rm -rf *.o
+rm -rf *.bin
+rm -rf *.asm
+rm -rf *.elf
+make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=1000000 -DCORE_DEBUG=0" REBUILD=1 MULDIV=yes clean compile link
+mv coremark.bin coremark.elf
+riscv64-unknown-elf-objcopy -O binary coremark.elf coremark.bin
+riscv64-unknown-elf-objcopy -O ihex coremark.elf coremark.hex
+riscv64-unknown-elf-objdump -S -d coremark.elf > coremark.asm
+
+
+
+make PORT_DIR=linux XCFLAGS="-DVALIDATION_RUN=1  -DCORE_DEBUG=1" REBUILD=1 clean compile link
