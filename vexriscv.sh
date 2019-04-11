@@ -7,7 +7,7 @@ rm -rf *.o
 rm -rf *.bin
 rm -rf *.asm
 rm -rf *.elf
-make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=1000000 -DCORE_DEBUG=0" ITERATIONS=50 REBUILD=1 clean compile link
+make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=100000 -DCORE_DEBUG=0" ITERATIONS=10 REBUILD=1 clean compile link
 mv coremark.bin coremark.elf
 riscv64-unknown-elf-objcopy -O binary coremark.elf build/coremark_rv32i.bin
 riscv64-unknown-elf-objcopy -O ihex coremark.elf build/coremark_rv32i.hex
@@ -18,7 +18,7 @@ rm -rf *.o
 rm -rf *.bin
 rm -rf *.asm
 rm -rf *.elf
-make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=1000000 -DCORE_DEBUG=0" ITERATIONS=50  REBUILD=1 MULDIV=yes clean compile link
+make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=100000 -DCORE_DEBUG=0" ITERATIONS=10  REBUILD=1 MULDIV=yes clean compile link
 mv coremark.bin coremark.elf
 riscv64-unknown-elf-objcopy -O binary coremark.elf build/coremark_rv32im.bin
 riscv64-unknown-elf-objcopy -O ihex coremark.elf build/coremark_rv32im.hex
@@ -30,7 +30,7 @@ rm -rf *.o
 rm -rf *.bin
 rm -rf *.asm
 rm -rf *.elf
-make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=1000000  -DCORE_DEBUG=0" ITERATIONS=50 REBUILD=1 COMPRESSED=yes clean compile link
+make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=100000  -DCORE_DEBUG=0" ITERATIONS=10 REBUILD=1 COMPRESSED=yes clean compile link
 mv coremark.bin coremark.elf
 riscv64-unknown-elf-objcopy -O binary coremark.elf build/coremark_rv32ic.bin
 riscv64-unknown-elf-objcopy -O ihex coremark.elf build/coremark_rv32ic.hex
@@ -43,7 +43,7 @@ rm -rf *.o
 rm -rf *.bin
 rm -rf *.asm
 rm -rf *.elf
-make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=1000000  -DCORE_DEBUG=0" ITERATIONS=50 REBUILD=1 MULDIV=yes  COMPRESSED=yes clean compile link
+make PORT_DIR=vexriscv_sim XCFLAGS="-DCLOCKS_PER_SEC=100000  -DCORE_DEBUG=0" ITERATIONS=10 REBUILD=1 MULDIV=yes  COMPRESSED=yes clean compile link
 mv coremark.bin coremark.elf
 riscv64-unknown-elf-objcopy -O binary coremark.elf build/coremark_rv32imc.bin
 riscv64-unknown-elf-objcopy -O ihex coremark.elf build/coremark_rv32imc.hex
