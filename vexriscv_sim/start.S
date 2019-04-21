@@ -36,16 +36,12 @@ _start:
 	bltu a0, a1, 1b
 2:
 
-    la x1, crash
-    csrw mepc, x1
 
 	call __libc_init_array
 	call main
 done:
     j done
 
-crash:
-    j crash
 
 	.globl _init
 _init:
